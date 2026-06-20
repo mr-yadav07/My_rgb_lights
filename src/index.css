@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+.sophisticated-bg {
+  background-color: #0B0B0F !important;
+}
+
+.glow-orb-custom {
+  background: radial-gradient(circle at 30% 30%, #FFD700, #F27D26);
+  box-shadow: 0 0 80px rgba(242, 125, 38, 0.4), inset -10px -10px 40px rgba(0,0,0,0.4);
+  position: relative;
+}
+
+.orb-reflection-custom {
+  position: absolute;
+  top: 15%;
+  left: 15%;
+  width: 30%;
+  height: 15%;
+  background: rgba(255,255,255,0.2);
+  border-radius: 50%;
+  transform: rotate(-45deg);
+  filter: blur(4px);
+}
+
+.glass-card-custom {
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+.chip-custom {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.2s ease-in-out;
+}
+
+.chip-custom:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.chip-active-custom {
+  background: #F27D26 !important;
+  border-color: #F27D26 !important;
+  color: #000000 !important;
+}
+
+.power-pill-custom {
+  background: rgba(255, 68, 68, 0.1);
+  color: #ff4444;
+  border: 1px solid rgba(255, 68, 68, 0.2);
+  transition: all 0.2s ease-in-out;
+}
+
+.power-pill-active-custom {
+  background: rgba(34, 197, 94, 0.1);
+  color: #4ade80;
+  border: 1px solid rgba(34, 197, 94, 0.2);
+}
+

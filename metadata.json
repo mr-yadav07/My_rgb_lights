@@ -1,0 +1,6 @@
+{
+  "name": "ESP32 RGB Light Controller",
+  "description": "An interactive simulator and native Android Jetpack Compose source-code companion for controlling an addressable WS2812/Neopixel strip over Bluetooth Low Energy (BLE).",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
