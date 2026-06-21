@@ -635,10 +635,11 @@ fun ColorWheelWidget(onColorSelected: (Color) -> Unit) {
             .pointerInput(Unit) {
                 detectDragGestures { change, dragAmount ->
                     change.consume()
-                    val center = size.div(2f)
+                    val centerX = size.width / 2f
+                    val centerY = size.height / 2f
                     val pos = change.position
-                    val dx = pos.x - center.width
-                    val dy = pos.y - center.height
+                    val dx = pos.x - centerX
+                    val dy = pos.y - centerY
                     val angleRad = atan2(dy, dx)
                     
                     var deg = Math.toDegrees(angleRad.toDouble()).toFloat()
@@ -655,9 +656,10 @@ fun ColorWheelWidget(onColorSelected: (Color) -> Unit) {
             }
             .pointerInput(Unit) {
                 detectTapGestures { offset ->
-                    val center = size.div(2f)
-                    val dx = offset.x - center.width
-                    val dy = offset.y - center.height
+                    val centerX = size.width / 2f
+                    val centerY = size.height / 2f
+                    val dx = offset.x - centerX
+                    val dy = offset.y - centerY
                     val angleRad = atan2(dy, dx)
                     
                     var deg = Math.toDegrees(angleRad.toDouble()).toFloat()

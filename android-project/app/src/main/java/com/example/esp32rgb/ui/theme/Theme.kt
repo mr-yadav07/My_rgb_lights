@@ -26,7 +26,7 @@ private val DarkColorScheme = darkColorScheme(
 fun ESP32RGBControllerTheme(
     content: @Composable () -> Unit
 ) {
-    val view = LocalView()
+    val view = LocalView.current
     if (!view.isInEditMode) {
         SideEffect {
             val window = (view.context as Activity).window
