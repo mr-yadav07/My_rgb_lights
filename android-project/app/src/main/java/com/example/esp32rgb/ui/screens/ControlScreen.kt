@@ -466,7 +466,7 @@ fun ActiveControlScreen(
                 checked = powerState,
                 onCheckedChange = { isChecked ->
                     powerState = isChecked
-                    onWriteCommand("POWER:\${if (isChecked) 1 else 0}")
+                    onWriteCommand("POWER:${if (isChecked) 1 else 0}")
                     if (!isChecked) {
                         selectedEffect = 0
                     } else if (selectedEffect == 0) {
@@ -500,7 +500,7 @@ fun ActiveControlScreen(
                     val r = (color.red * 255).toInt()
                     val g = (color.green * 255).toInt()
                     val b = (color.blue * 255).toInt()
-                    onWriteCommand("COLOR:\$r,\$g,\$b")
+                    onWriteCommand("COLOR:$r,$g,$b")
                 }
             }
         }
@@ -522,7 +522,7 @@ fun ActiveControlScreen(
                     horizontalArrangement = Arrangement.SpaceBetween
                 ) {
                     Text("Controller Brightness", color = Color.White, fontSize = 14.sp)
-                    Text("\${brightness.toInt()}/255", color = Color(0xFF8E8E9F), fontSize = 14.sp, fontFamily = FontFamily.Monospace)
+                    Text("${brightness.toInt()}/255", color = Color(0xFF8E8E9F), fontSize = 14.sp, fontFamily = FontFamily.Monospace)
                 }
                 Spacer(modifier = Modifier.height(4.dp))
                 Slider(
@@ -533,7 +533,7 @@ fun ActiveControlScreen(
                         // Can be throttled to 100ms in actual handler
                     },
                     onValueChangeFinished = {
-                        onWriteCommand("BRIGHT:\${brightness.toInt()}")
+                        onWriteCommand("BRIGHT:${brightness.toInt()}")
                     },
                     colors = SliderDefaults.colors(
                         activeTrackColor = Color(0xFF1E5CFF),
@@ -575,7 +575,7 @@ fun ActiveControlScreen(
                             } else {
                                 powerState = true
                                 onWriteCommand("POWER:1")
-                                onWriteCommand("EFFECT:\$index")
+                                onWriteCommand("EFFECT:$index")
                             }
                         }
                         .padding(vertical = 10.dp),
