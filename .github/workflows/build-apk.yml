@@ -23,16 +23,12 @@ jobs:
         distribution: 'temurin'
         cache: 'gradle'
 
-    - name: Setup Gradle
+    - name: Setup and Build with Gradle
       uses: gradle/actions/setup-gradle@v3
       with:
         gradle-version: '8.5'
         build-root-directory: android-project
-
-    - name: Build Debug APK
-      run: |
-        cd android-project
-        gradle assembleDebug
+        arguments: assembleDebug
 
     - name: Upload APK Artifact
       uses: actions/upload-artifact@v4

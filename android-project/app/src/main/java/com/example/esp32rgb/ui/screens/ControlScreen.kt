@@ -30,8 +30,6 @@ import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
-import androidx.compose.ui.graphics.RadialGradient
-import androidx.compose.ui.graphics.TileMode
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.text.font.FontFamily
@@ -295,10 +293,10 @@ fun ScanDeviceItem(
     onConnect: () -> Unit
 ) {
     Card(
-        onClick = onConnect,
         modifier = Modifier
             .fillMaxWidth()
-            .padding(12.dp),
+            .padding(12.dp)
+            .clickable { onConnect() },
         colors = CardDefaults.cardColors(containerColor = Color(0xFF12121A)),
         border = BorderStroke(1.dp, Color(0xFF1E1E2C)),
         shape = RoundedCornerShape(12.dp)
